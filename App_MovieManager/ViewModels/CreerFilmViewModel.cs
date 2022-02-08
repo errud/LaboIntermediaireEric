@@ -46,7 +46,7 @@ namespace App_MovieManager.ViewModels
         private string _synopsis;
         private int _dateSortie;
         private CommandBase _detailFilmCommand;
-        private ObservableCollection<Casting...> _casting;
+        //private ObservableCollection<Casting...> _casting;
 
         public int IdFilm
         {

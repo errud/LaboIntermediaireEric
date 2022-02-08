@@ -38,15 +38,16 @@
         <Grid Background="White" Height="760">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="165"/>
-                <ColumnDefinition />
+                <ColumnDefinition Width="949*" />
+                <ColumnDefinition Width="86*"/>
             </Grid.ColumnDefinitions>
             <!-- NAVIGATION -->
             <controls:NavMenu Grid.Column="0"/>
 
             <!-- PAGE CONTENT -->
-            <StackPanel Grid.Column="1">
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="2">
                 <!-- PAGE TITLE -->
-                <TextBlock Text="Nouveau Film" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="12 10 10 10" />
+                <TextBlock Text="" FontSize="20" FontWeight="SemiBold" VerticalAlignment="Center" Margin="12 10 10 10" />
                 <!-- ??? -->
                 <Grid>
                     <Grid.RowDefinitions>
@@ -60,7 +61,9 @@
                         <RowDefinition Height="41"/>
                         <RowDefinition Height="41"/>
                         <RowDefinition Height="41"/>
-                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="41"/>
+                        <RowDefinition Height="41"/>
+                        <RowDefinition Height="41"/>
                         <RowDefinition Height="41"/>
                         <RowDefinition Height="41"/>
                         <RowDefinition Height="41"/>
@@ -68,34 +71,37 @@
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="122"/>
+                        <ColumnDefinition Width="209"/>
+                        <ColumnDefinition Width="109"/>
+                        <ColumnDefinition Width="142"/>
+                        <ColumnDefinition Width="3"/>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="189"/>
+                        <ColumnDefinition Width="166"/>
+                        <ColumnDefinition Width="38"/>
+                        <ColumnDefinition Width="227"/>
                         <ColumnDefinition Width="122"/>
                         <ColumnDefinition Width="122"/>
                         <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="122"/>
-                        <ColumnDefinition Width="300"/>
                         <ColumnDefinition Width="122"/>
                         <ColumnDefinition Width="122"/>
 
                     </Grid.ColumnDefinitions>
-                    <Label Content="Formulaire - Ajout de Films" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
-                    <Label Content="Titre du Film :" Grid.Row="2" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Genre :" Grid.Row="3" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Réalisateur :" Grid.Row="4" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Réal.-DOB :" Grid.Row="5" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Réal.-Country :" Grid.Row="6" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Scenariste :" Grid.Row="7" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Scen.-DOB :" Grid.Row="8" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Scen.-Country :" Grid.Row="9" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Synopsis :" Grid.Row="10" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Date de Sortie :" Grid.Row="11" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <Label Content="Duree :" Grid.Row="12" Grid.Column="1" FontSize="16" FontWeight="Bold"/>
-                    <TextBox Name="titretxb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="genrecmb" Grid.Row="3" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
+                    <Label Content="Formulaire - Insertion des Films" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold" Width="389" Grid.Column="1"/>
+                    <Label Content="Titre du Film :" Grid.Row="2" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <Label Content="Genre :" Grid.Row="3" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,10,0,31" Grid.RowSpan="2"/>
+                    <Label Content="Nom-Realisateur :" Grid.Row="4" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,10,0,31" Grid.RowSpan="2"/>
+                    <Label Content="Prénom-Réalisateur :" Grid.Row="5" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,10,0,31" Grid.RowSpan="2"/>
+                    <Label Content="Nationalité-Réalisateur :" Grid.Row="6" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,10,0,31" Grid.RowSpan="2"/>
+                    <Label Content="Nom-Scénariste :" Grid.Row="7" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,4,0,37" Grid.RowSpan="2"/>
+                    <Label Content="Prénom-Scénariste :" Grid.Row="8" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,4,0,37" Grid.RowSpan="2"/>
+                    <Label Content="Nationalité-Scénariste :" Grid.Row="9" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <Label Content="Synopsis :" Grid.Row="10" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <Label Content="Date de Sortie :" Grid.Row="11" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <Label Content="Durée :" Grid.Row="12" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <Label Content="Affiche :" Grid.Row="13" Grid.Column="1" FontSize="16" FontWeight="Bold" Margin="0,10,0,30" Grid.RowSpan="2"/>
+                    <TextBox Name="titretxb" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="genrecmb" Grid.Row="3" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
                     <!--<ComboBoxItem Content="1- Drame"/>
                         <ComboBoxItem Content="2- Comedie"/>
                         <ComboBoxItem Content="3- Horreur"/>
@@ -103,47 +109,45 @@
                         <ComboBoxItem Content="5- Action"/>
                         <ComboBoxItem Content="6- Other"/>
                     </ComboBox>-->
-                    <TextBox Name="realcmb" Grid.Row="4" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
+                    <TextBox Name="nomrealtxb" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
                     <!--<ComboBoxItem Content="1- Martin Scorsese"/>
                         <ComboBoxItem Content="9- Rémy Belvaux"/>
                         <ComboBoxItem Content="2- Steven Zaillian"/>
                         <ComboBoxItem Content="200- Other"/>
                     </ComboBox>-->
-                    <TextBox Name="realagetxb" Grid.Row="5" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="realpaystxb" Grid.Row="6" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="scenacmb" Grid.Row="7" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
+                    <TextBox Name="prenrealtxb" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="natrealtxb" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="nomscentxb" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
                     <!--<ComboBoxItem Content="5- Paul Schrader"/>
                         <ComboBoxItem Content="11- André Bonzel"/>
                         <ComboBoxItem Content="200- Other"/>
                     </ComboBox>-->
-                    <TextBox Name="scenagetxb" Grid.Row="8" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="scenapaystxb" Grid.Row="9" Grid.Column="2" FontSize="14" FontWeight="Bold" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="synopstxb" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="dtreleasetxb" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <TextBox Name="dureetxb" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="3" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <StackPanel Grid.Column="5">
-                        <Label Content="Casting" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
-                        <Label Content="Nom :" Grid.Row="2" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                        <TextBox Name="nomtxb" Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="1" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                        <Label Content="Prénom :" Grid.Row="3" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                        <TextBox Name="prenomtxb" Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="1" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                        <Label Content="Role :" Grid.Row="4" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                        <TextBox Name="roletxb" Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="1" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    </StackPanel>
-                    
-                    <Label Content="Personne" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="25" FontWeight="Bold"/>
-                    <Label Content="Nom :" Grid.Row="8" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                    <TextBox Name="lastnametxb" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="1" Style="{StaticResource MovieFormTextBox}"/>
-                    <Label Content="Prénom :" Grid.Row="9" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                    <TextBox Name="firstnametxb" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="1" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <Label Content="DOB :" Grid.Row="11" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                    <TextBox Name="dobtxb" Grid.Row="11" Grid.Column="7" Grid.ColumnSpan="1" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <Label Content="Country :" Grid.Row="12" Grid.Column="6" FontSize="16" FontWeight="Bold"/>
-                    <TextBox Name="ctrytxb" Grid.Row="12" Grid.Column="7" Grid.ColumnSpan="1" Background="Silver" BorderBrush="CornflowerBlue" BorderThickness="2" Margin="2"/>
-                    <Button Grid.Column="3" Grid.Row="15" Content=" SAUVEGARDER " Grid.ColumnSpan="3" Background="Silver" FontSize="14" BorderBrush="DodgerBlue" BorderThickness="4" FontWeight="Bold" Margin="80,2,80,2"/>
-                </Grid>                
+                    <TextBox Name="prenscentxb" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="natscentxb" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="synopstxb" Grid.Row="10" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="dtreleasetxb" Grid.Row="11" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="dureetxb" Grid.Row="12" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <TextBox Name="affichetxb" Grid.Row="13" Grid.Column="2" Grid.ColumnSpan="2" Style="{StaticResource MovieFormTextBox}"/>
+                    <Label Content="Casting" Grid.Row="0" Grid.Column="6" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold" Width="98"/>
+                    <Label Content="Nom :" Grid.Row="2" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="nomtxb" Grid.Row="2" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Label Content="Prénom :" Grid.Row="3" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="prenomtxb" Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Label Content="Role :" Grid.Row="4" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="roletxb" Grid.Row="4" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Label Content="Personne" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Left" FontSize="25" FontWeight="Bold" Width="118"/>
+                    <Label Content="Nom :" Grid.Row="8" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,6,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="lastnametxb" Grid.Row="8" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Label Content="Prénom :" Grid.Row="9" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="firstnametxb" Grid.Row="9" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Label Content="Date de Naissance :" Grid.Row="10" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="dobtxb" Grid.Row="10" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Label Content="Nationalité :" Grid.Row="11" Grid.Column="6" FontSize="16" FontWeight="Bold" Margin="0,5,0,36" Grid.RowSpan="2"/>
+                    <TextBox Name="ctrytxb" Grid.Row="11" Grid.Column="7" Grid.ColumnSpan="3" Style="{StaticResource MovieFormTextBox}" Margin="0,0,216,0"/>
+                    <Button Grid.Column="2" Grid.Row="14" Content=" SAUVEGARDER " Background="Silver" FontSize="14" BorderBrush="DodgerBlue" BorderThickness="4" FontWeight="Bold" Margin="23,25,24,21" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
+                </Grid>
             </StackPanel>
         </Grid>
-        
+
     </StackPanel>
 </Window>
