@@ -32,7 +32,7 @@ namespace App_MovieManager.ViewModels
             Minimize?.Invoke();
         }
 
-        // Ajouter un nouveau via le formulaire
+        // Ajouter un nouveau film via le formulaire 
 
         private int _idFilm;
         private string _titre;
@@ -60,7 +60,6 @@ namespace App_MovieManager.ViewModels
                 }
             }
         }
-
         public string Titre
         {
             get { return _titre; }
