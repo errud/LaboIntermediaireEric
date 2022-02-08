@@ -1,0 +1,32 @@
+﻿<Application x:Class="App_MovieManager.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:App_MovieManager"
+             xmlns:vm="clr-namespace:App_MovieManager.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <vm:LoginViewModel x:Key="Main" />
+            <vm:RegisterViewModel x:Key="Register" />
+            <vm:LoginViewModel x:Key="Home" />
+            <vm:ListeFilmsViewModel x:Key="MovieList" />
+            <vm:ListeActeursViewModel x:Key="ActorList" />
+            <vm:DetailFilmViewModel x:Key="DetailFilm" />
+            <vm:CreerFilmViewModel x:Key="CreatelFilm" />
+            <vm:ModifierFilmViewModel x:Key="UpdateFilm" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Ressources/ButtonTheme.xaml" />
+                <ResourceDictionary Source="Ressources/CreateMovieTheme.xaml" />
+                <ResourceDictionary Source="Ressources/ButtonWindowHeader.xaml" />
+                <ResourceDictionary Source="Ressources/ButtonGrid.xaml" />
+                <ResourceDictionary Source="Ressources/DetailFilmItems.xaml" />
+                <ResourceDictionary Source="Ressources/TextboxTheme.xaml" />
+                <ResourceDictionary Source="Ressources/NavItems.xaml" />
+                <ResourceDictionary Source="Ressources/PageTitle.xaml" />
+                <ResourceDictionary Source="Ressources/DataGridTheme.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
