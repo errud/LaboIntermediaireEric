@@ -13,7 +13,7 @@ namespace App_MovieManager.Tools
         // ADRIEN : "Data Source=5233;Initial Catalog=MovieDB;User ID=adrien;Password=Test1234;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         // ERIC : "Data Source=5210;Initial Catalog=MovieDB;User ID=sa;Password=Test1234;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         private string _connectionString = "Data Source=5210;Initial Catalog=MovieDB;User ID=sa;Password=Test1234;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
+        public int usersession;
         public bool CheckUserExist(string email,string passwd)
         {
             Connection cnx = new Connection(_connectionString);
@@ -26,13 +26,16 @@ namespace App_MovieManager.Tools
             if (u is null)
                 return false;
 
+  
+
             Session.CurrentUser = new Utilisateur()
             {
                 IdUser = u.IdUser,
                 Nickname = u.Nickname,
                 Email = u.Email
+                
             };
-
+            usersession = u.IdUser;
             return true;
         }
 
@@ -53,6 +56,16 @@ namespace App_MovieManager.Tools
 
             return cnx.ExecuteReader(cmd, FilmDetail.Converter2);
         }
+
+        public IEnumerable<FilmCollection> GetCollectionList()
+        {
+            Connection cnx = new Connection(_connectionString);
+            string sql = "SELECT f.Id_Film, f.Titre, g.GenreDeFilm, CONCAT(r.Prenom,' ',r.Nom) AS Realisateur, CONCAT(s.Prenom,' ',s.Nom) AS Scenariste, f.DateSortie, f.Duree FROM Film f JOIN Genre g ON (f.Id_Genre = g.Id_Genre) JOIN Personne r ON (f.Realisateur = r.Id_Personne) JOIN Personne s ON (f.Scenariste = s.Id_Personne)";
+            Command cmd = new Command(sql);
+
+            return cnx.ExecuteReader(cmd, FilmCollection.Converter3);
+        }
+
 
         public FilmDetail GetMovieDetail(int idFilm)
         {
@@ -79,5 +92,18 @@ namespace App_MovieManager.Tools
             int Rows = cnx.ExecuteNonQuery(cmd);
 
         }
-    }
+
+        public void CreateCollection(int iduser, int idfilm, int favori, int corbeille = 0)
+        {
+            Connection cnx = new Connection(_connectionString);
+            string sql = "AddCollection";
+            Command cmd = new Command(sql, true);
+            cmd.AddParameter("iduser", iduser);
+            cmd.AddParameter("idfilm", idfilm);
+            cmd.AddParameter("favori", favori);
+            cmd.AddParameter("corbeille", corbeille);
+            int Rows = cnx.ExecuteNonQuery(cmd);
+
+
+        }
 }

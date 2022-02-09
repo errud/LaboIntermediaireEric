@@ -1,4 +1,4 @@
-﻿using App_MovieManager.ViewModels;
+﻿using App_MovieManager.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +16,15 @@ using System.Windows.Shapes;
 namespace App_MovieManager.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ListeFilmsWindow.xaml
+    /// Interaction logic for CollectionFilmWindow.xaml
     /// </summary>
-    public partial class ListeFilmsWindow : Window
+    public partial class CollectionFilmWindow : Window
     {
-        public ListeFilmsWindow()
+        public CollectionFilmWindow()
         {
             InitializeComponent();
-            DataContext = new ListeFilmsViewModel();
+            Loaded += CollectionWindow_Loaded;
         }
-
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -41,23 +40,18 @@ namespace App_MovieManager.Views
         {
             this.Close();
         }
-        private void EmptyTextboxOnFocus(object sender, RoutedEventArgs e)
+
+
+        private void btn_Collection (object sender, RoutedEventArgs e)
         {
-            TextBox tbox = (TextBox)sender;
-            tbox.Text = string.Empty;
-            tbox.GotFocus -= EmptyTextboxOnFocus;
+            
         }
 
-        private void ResetTextboxLostFocus(object sender, RoutedEventArgs e)
+        private void CollectionWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            TextBox tbox = (TextBox)sender;
-            tbox.Text = "Rechercher...";
-            tbox.LostFocus += ResetTextboxLostFocus;
-        }
-
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            if (DataContext is ICloseWindow vmc)
+                vmc.Close += () => this.Close();
         }
     }
+
 }

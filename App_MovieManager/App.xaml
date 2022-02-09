@@ -15,6 +15,7 @@
             <vm:DetailFilmViewModel x:Key="DetailFilm" />
             <vm:CreerFilmViewModel x:Key="CreatelFilm" />
             <vm:ModifierFilmViewModel x:Key="UpdateFilm" />
+            <vm:CollectionFilmViewModel x:Key="PlayListFilm" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Ressources/ButtonTheme.xaml" />
                 <ResourceDictionary Source="Ressources/CreateMovieTheme.xaml" />

@@ -41,10 +41,17 @@ namespace App_MovieManager.ViewModels
         private string _duree;
         private int _idRealisateur;
         private string _nomRealisateur;
+        private string _prenomRealisateur;
+        private string _nationaliteRealisateur;
+        private DateTime _dobRealisateur;
         private int _idScenariste;
         private string _nomScenariste;
+        private string _prenomScenariste;        
+        private string _nationaliteScenariste;
+        private DateTime _dobScenariste;
         private string _synopsis;
         private int _dateSortie;
+        private string _affiche;
         private CommandBase _detailFilmCommand;
         //private ObservableCollection<Casting...> _casting;
 
@@ -137,7 +144,42 @@ namespace App_MovieManager.ViewModels
                 }
             }
         }
-
+        public string PrenomRealisateur
+        {
+            get { return _prenomRealisateur; }
+            set
+            {
+                if (_prenomRealisateur != value)
+                {
+                    _prenomRealisateur = value;
+                    RaisePropertyChanged(nameof(PrenomRealisateur));
+                }
+            }
+        }
+        public string NationaliteRealisateur
+        {
+            get { return _nationaliteRealisateur; }
+            set
+            {
+                if (_nationaliteRealisateur != value)
+                {
+                    _nationaliteRealisateur = value;
+                    RaisePropertyChanged(nameof(NationaliteRealisateur));
+                }
+            }
+        }
+        public DateTime DateNaissanceRealisateur
+        {
+            get { return _dobRealisateur; }
+            set
+            {
+                if (_dobRealisateur != value)
+                {
+                    _dobRealisateur = value;
+                    RaisePropertyChanged(nameof(DateNaissanceRealisateur));
+                }
+            }
+        }
         public int IdScenariste
         {
             get { return _idScenariste; }
@@ -160,6 +202,45 @@ namespace App_MovieManager.ViewModels
                 {
                     _nomScenariste = value;
                     RaisePropertyChanged(nameof(NomScenariste));
+                }
+            }
+        }
+
+        public string PrenomScenariste
+        {
+            get { return _prenomScenariste; }
+            set
+            {
+                if (_prenomScenariste != value)
+                {
+                    _prenomScenariste = value;
+                    RaisePropertyChanged(nameof(PrenomScenariste));
+                }
+            }
+        }
+
+        public string NationaliteScenariste
+        {
+            get { return _nationaliteScenariste; }
+            set
+            {
+                if (_nationaliteScenariste != value)
+                {
+                    _nationaliteScenariste = value;
+                    RaisePropertyChanged(nameof(NationaliteScenariste));
+                }
+            }
+        }
+
+        public DateTime DateNaissanceScenariste
+        {
+            get { return _dobScenariste; }
+            set
+            {
+                if (_dobScenariste != value)
+                {
+                    _dobScenariste = value;
+                    RaisePropertyChanged(nameof(DateNaissanceScenariste));
                 }
             }
         }
@@ -190,6 +271,19 @@ namespace App_MovieManager.ViewModels
             }
         }
 
-        
+        public string Affiche
+        {
+            get { return _affiche; }
+            set
+            {
+                if (_affiche != value)
+                {
+                    _affiche = value;
+                    RaisePropertyChanged(nameof(Affiche));
+                }
+            }
+        }
+
+
     }
 }
